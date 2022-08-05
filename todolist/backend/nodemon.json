@@ -1,0 +1,6 @@
+{
+    "env":{
+        "MONGODB_ATLAS_URL": "mongodb+srv://geeta:BooAK90nMi4Xlx0K@cluster0.0iqu5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+        "JWT_KEY": "your_strong_salt_secret"
+    }
+}

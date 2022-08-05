@@ -1,0 +1,55 @@
+<!-- <h1>Hey! Thanks to visit here</h1>
+<p>Below is event listener example</p> -->
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<main>
+
+<mat-card *ngIf="!isLoading">
+  
+
+<form [formGroup]="taskForm" (submit)="onSaveTask()" >
+    <mat-card>
+      <!-- <input matInput type="text" [(ngModel)]="enteredTitle" /> -->
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Create Your Task</mat-label><br>
+
+        <!-- <input matInput type="text" [(ngModel)]="enteredTitle" [ngModelOptions]="{standalone: true}" placeholder="Enter Title"/> -->
+        <input matInput type="text" 
+       formControlName='title' placeholder="Enter Title" />
+        <mat-error *ngIf="taskForm.get('title').invalid">Please Enter Title</mat-error>
+        <!-- <mat-card-title>Form</mat-card-title> -->
+      </mat-form-field>
+      <br><br><br><br>
+      <mat-form-field>
+        
+        <input matInput type="text" formControlName='description' placeholder="Enter Description" /><br><br><br>
+        <mat-error *ngIf="taskForm.get('description').invalid">Please Enter Description</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+        <br><br>
+        <input type="file" #filePicker (change)="onImagePicked($event)">
+        <mat-error *ngIf="taskForm.get('image').invalid && taskForm.get('image').touched">Please Choose Images</mat-error>
+      </div>
+      <div class="image-preview" *ngIf="imagePreview && imagePreview != ''">
+        <img [src]="imagePreview" [alt]='taskForm.value.title'>
+      </div>
+
+      <button mat-raised-button color="warn" type="submit">{{mode | uppercase}}</button><br><br>
+        <!-- <br><br><button mat-raised-button color="primary" (click)="onClickButton()">Welcome Message</button><br><br>
+    <button mat-raised-button color="accent" (focus)="onFocusButton(3)">Focus Button</button><br><br>
+    <button mat-raised-button color="warn" (mouseover)="onHoverButton()">Hover Button</button><br><br>
+    <input type="button" (click)="console.log('Listening Events called');" value="Click & Check console">
+  -->
+    </mat-card>
+
+    
+      
+    
+</form>
+</mat-card>
+<br>
+</main>
+    <!-- <hr>
+    <h2>Welcome Message:</h2><p>{{wlcmMsg}}</p>
+    <hr>
+    <br> -->

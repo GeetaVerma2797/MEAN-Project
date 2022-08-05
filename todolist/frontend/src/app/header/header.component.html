@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <!-- <app-list></app-list> -->
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span><a routerLink=''>My App</a></span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+  <span><a mat-button routerLink=''>Todo List App</a></span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated"><a mat-button routerLink='/create' routerLinkActive='mat-accent'>New Task</a></li>
+    <li  *ngIf="!userIsAuthenticated"><a mat-button routerLink='/auth/login' routerLinkActive='mat-accent'>Log In</a></li>
+    <li  *ngIf="!userIsAuthenticated"><a mat-button routerLink='/auth/signup' routerLinkActive='mat-accent'>Sign Up</a></li>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>

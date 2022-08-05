@@ -1,0 +1,60 @@
+<!-- <h1>Hey! Thanks to visit here</h1>
+<p>Below is event listener example</p> -->
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<main>
+
+<mat-card *ngIf="!isLoading">
+  
+
+<form (submit)="onSignUp(signupForm)" #signupForm="ngForm" *ngIf="!isLoading" >
+    <mat-card>
+      <!-- <input matInput type="text" [(ngModel)]="enteredTitle" /> -->
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label><br>
+
+        <!-- <input matInput type="text" [(ngModel)]="enteredTitle" [ngModelOptions]="{standalone: true}" placeholder="Enter Title"/> -->
+        <input
+         matInput
+         type="email"
+         placeholder="Enter Email"
+         #emailInput='ngModel' 
+         name="email"
+         ngModel        
+         required
+         email
+         />
+        <mat-error *ngIf="emailInput.invalid">Please Enter EMail</mat-error>
+        <!-- <mat-card-title>Form</mat-card-title> -->
+        <!-- taskForm.get('title').invalid -->
+      </mat-form-field>
+      <br><br><br><br>
+      <mat-form-field>
+        <mat-label>Password</mat-label><br>
+
+        <input
+         matInput
+         type="password" 
+         placeholder="Enter Password" 
+         #PasswordInput='ngModel' 
+         name="password"
+         ngModel
+         required
+        /><br><br><br>
+        <mat-error *ngIf="PasswordInput.invalid">Please Enter Password</mat-error>
+      </mat-form-field>
+      
+      <button mat-raised-button color="warn" type="submit" *ngIf="!isLoading">Sign Up</button><br><br>
+      
+    </mat-card>
+
+    
+      
+    
+</form>
+</mat-card>
+<br>
+</main>
+    <!-- <hr>
+    <h2>Welcome Message:</h2><p>{{wlcmMsg}}</p>
+    <hr>
+    <br> -->

@@ -1,0 +1,13 @@
+$bgcolor: yellow;
+$textcolor: green;
+$fontsize: 25px;
+  
+/* Use the variables */
+h1 {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+main{
+  margin: 60px;
+}
