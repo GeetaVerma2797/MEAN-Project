@@ -1,2 +1,3 @@
-# xyz
-Welcome to coder world
+# MEAN Project
+
+Frontent and backend both included in this project
